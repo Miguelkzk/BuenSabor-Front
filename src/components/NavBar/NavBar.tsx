@@ -4,7 +4,12 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import '../../routes/AppRoutes'
+
 function NavBar() {
+    const navigate = useNavigate();
     return (
         <Navbar expand="lg" style={{ backgroundColor: '#F9ED32' }} >
             <Container fluid>
@@ -27,7 +32,7 @@ function NavBar() {
                             </NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
-                    <Form className="d-flex">
+                    <Form className="d-flex m-3">
                         <Form.Control
                             type="Buscar"
                             placeholder="Search"
@@ -36,6 +41,11 @@ function NavBar() {
                         />
                         <Button style={{ backgroundColor: '#000000', borderColor: '#000000' }}>Search</Button>
                     </Form>
+                  
+                        <Nav className="me-auto">
+                            <Nav.Link onClick={() => navigate('/login')}>Login</Nav.Link>
+                        </Nav>
+                    
                 </Navbar.Collapse>
             </Container>
         </Navbar>
