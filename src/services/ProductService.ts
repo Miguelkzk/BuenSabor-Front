@@ -8,5 +8,12 @@ export const ProductoService = {
         const data = await response.json();
         return data;
 
+    },
+    //getone
+    getProducto: async (id: number): Promise<Producto> => {
+        const response = await fetch(`${BASE_URL}/productos/${id}`)
+        const data = await response.json();
+        return data;
+
     }
 }
