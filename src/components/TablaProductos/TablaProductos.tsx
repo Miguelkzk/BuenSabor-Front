@@ -35,28 +35,31 @@ function TablaProductos() {
 
     }, []);
 
+
     console.log(JSON.stringify(productos, null, 2));
 
 
 
     return (
-        <>
-            <div className="col-sm-12 col-md-auto d-flex justify-content-center align-items-center col-auto">
-                {productos.map(producto => (
-                    <Card style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src={producto.urlImagen} />
-                        <Card.Body>
-                            <Card.Title>{producto.denominacion}</Card.Title>
-                            <Card.Text>
-                                {producto.descripcion}
-                            </Card.Text>
-                            <Button variant="primary">Go somewhere</Button>
-                        </Card.Body>
-                    </Card>
+        <div className="d-flex justify-content-center align-items-center">
+            <div className="row" style={{ marginTop: '3rem', display: "flex", justifyContent: "center" }} >
+                {productos.map((producto, index) => (
+                    <div key={index} className="col-xxl-2 col-xl-3 col-md-4 col-sm-5 col-9" style={{ marginBottom: '2rem', display: "flex", justifyContent: "center" }}>
+                        <Card style={{ width: '17rem', height: '26rem' }}>
+                            <Card.Img variant="top" src={producto.urlImagen} />
+                            <Card.Body>
+                                <Card.Title>{producto.denominacion}</Card.Title>
+                                <Card.Text>{producto.descripcion}</Card.Text>
+                                <Button variant="primary">Ver más</Button>
+                            </Card.Body>
+                        </Card>
+                    </div>
                 ))}
-
             </div>
-        </>
-    )
-}
+        </div>
+
+    );
+};
+
+
 export default TablaProductos;
