@@ -4,11 +4,13 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { useNavigate } from 'react-router-dom';
 function NavBar() {
+    const navigate = useNavigate();
     return (
         <Navbar expand="lg" style={{ backgroundColor: '#F9ED32' }} >
             <Container fluid>
-                <Navbar.Brand href="#">EL BUEN SABOR</Navbar.Brand>
+                <Navbar.Brand onClick={() => navigate('/')} >EL BUEN SABOR</Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                     <Nav
