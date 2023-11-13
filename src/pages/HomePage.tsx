@@ -6,7 +6,6 @@ function HomePage() {
         <>
             <NavBar />
             <TablaProductos />
-            <h1>Home</h1>
         </>
     )
 }
