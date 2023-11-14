@@ -15,5 +15,12 @@ export const ProductoService = {
         const data = await response.json();
         return data;
 
+    },
+    searchProducto: async (filter: string): Promise<Producto[]> => {
+        const response = await fetch(`${BASE_URL}/api/productos/search?filtro=${filter}`)
+        const data = await response.json();
+        return data;
     }
+
 }
+//http://localhost:8088/api/productos/search?filtro=

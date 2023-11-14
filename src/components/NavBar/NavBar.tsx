@@ -33,15 +33,6 @@ function NavBar() {
 
                         <Nav.Link href="http://localhost:5173/clientes">Clientes</Nav.Link>
                     </Nav>
-                    <Form className="d-flex">
-                        <Form.Control
-                            type="Buscar"
-                            placeholder="Search"
-                            className="me-2"
-                            aria-label="Search"
-                        />
-                        <Button style={{ backgroundColor: '#000000', borderColor: '#000000' }}>Search</Button>
-                    </Form>
                     <Nav className="me-auto">
                         <Nav.Link onClick={() => navigate('/login')}>Login</Nav.Link>
                     </Nav>
