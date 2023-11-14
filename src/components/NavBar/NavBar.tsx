@@ -28,6 +28,10 @@ function NavBar() {
                                 Bebidas
                             </NavDropdown.Item>
                         </NavDropdown>
+                        <Nav.Link href="http://localhost:5173/articulos">Artículos</Nav.Link>
+
+
+                        <Nav.Link href="http://localhost:5173/clientes">Clientes</Nav.Link>
                     </Nav>
                     <Form className="d-flex">
                         <Form.Control

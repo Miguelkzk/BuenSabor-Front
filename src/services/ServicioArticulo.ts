@@ -9,12 +9,12 @@ const ServicioArticulo = {
         return data;
     },
     getArticulo: async (id: number): Promise<Articulo> => {
-        const response = await fetch(`${BASE_URL}/articulos/${id}`);
+        const response = await fetch(`${BASE_URL}/api/articulos/${id}`);
         const data = await response.json();
         return data;
     },
     createArticulo: async (articulo: Articulo): Promise<Articulo> => {
-        const response = await fetch(`${BASE_URL}/articulos`, {
+        const response = await fetch(`${BASE_URL}/api/articulos`, {
             method: "POST",
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(articulo)
@@ -23,7 +23,7 @@ const ServicioArticulo = {
         return data;
     },
     updateArticulo: async (id: number, articulo: Articulo): Promise<Articulo> => {
-        const response = await fetch(`${BASE_URL}/articulos/${id}`, {
+        const response = await fetch(`${BASE_URL}/api/articulos/${id}`, {
             method: "PUT",
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(articulo)
@@ -32,7 +32,7 @@ const ServicioArticulo = {
         return data;
     },
     deleteArticulo: async (id: number): Promise<void> => {
-        await fetch(`${BASE_URL}/articulos/${id}`, {
+        await fetch(`${BASE_URL}/api/articulos/${id}`, {
             method: "DELETE"
         });
     }
