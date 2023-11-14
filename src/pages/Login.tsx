@@ -25,7 +25,7 @@ const Login: React.FC = () => {
           };
           const response = await axios.post('http://localhost:8088/auth/login', loginData);
           
-          const token = response.data.token;
+          localStorage.setItem('token', response.data.token);
           console.log('Respuesta del backend:', response.data);
           window.localStorage.setItem('isLoggedIn', 'true')
           navigate('/');
