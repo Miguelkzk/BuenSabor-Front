@@ -24,7 +24,12 @@ const VerProducto: React.FC<PropsProducto> = ({ prod, onBack }) => {
 
             </div>
         </div>
-        <Button onClick={onBack}>Volver</Button>
+        <div className=" d-flex justify-content-center align-items-center" >
+            <Button style={{ backgroundColor: '#F9ED32', color: 'black', marginRight: '2rem', border: '#F9ED31' }}>Agregar al carrito</Button>
+            <Button onClick={onBack}>Volver</Button>
+        </div>
+
+
     </>
     );
 }

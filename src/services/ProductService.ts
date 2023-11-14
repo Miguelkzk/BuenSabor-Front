@@ -21,4 +21,6 @@ export const ProductoService = {
         const data = await response.json();
         return data;
     }
+
 }
+//http://localhost:8088/api/productos/search?filtro=
