@@ -29,8 +29,6 @@ function NavBar() {
                             </NavDropdown.Item>
                         </NavDropdown>
                         <Nav.Link href="http://localhost:5173/articulos">Artículos</Nav.Link>
-
-
                         <Nav.Link href="http://localhost:5173/clientes">Clientes</Nav.Link>
                     </Nav>
                     <Form className="d-flex">
@@ -45,6 +43,7 @@ function NavBar() {
                     <Nav className="me-auto">
                         <Nav.Link onClick={() => navigate('/login')}>Login</Nav.Link>
                     </Nav>
+                    <Nav.Link>Log Out</Nav.Link>
                 </Navbar.Collapse>
             </Container>
         </Navbar>
