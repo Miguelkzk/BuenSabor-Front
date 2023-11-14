@@ -4,15 +4,9 @@ import { ProductoService } from "../../services/ProductService";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import VerProducto from "./VerProducto";
-<<<<<<< HEAD
-import { Form } from "react-router-dom";
-import { FormControl } from "react-bootstrap";
 
-
-=======
 import { FormControl, Navbar } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
->>>>>>> Miguel
 interface PropsProducto {
     prodId: number;
 }
@@ -139,9 +133,3 @@ function TablaProductos() {
     </>);
 }
 export default TablaProductos;
-<<<<<<< HEAD
-=======
-/*
-className="col-xxl-2 col-xl-3 col-md-4 col-sm-5 col-9"
-*/
->>>>>>> Miguel
