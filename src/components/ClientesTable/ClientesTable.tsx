@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-
+import { Cliente } from "../../types/Cliente"
 import Button from 'react-bootstrap/Button';
 import ClienteService from "../../services/ClienteService";
 import { ModalType } from "../../types/modal-type/ModalType";
@@ -8,7 +8,6 @@ import { Table } from "react-bootstrap";
 import EditButton from "../EditButton/EditButton";
 import DeleteButton from "../DeleteButton/DeleteButton";
 import ClienteModal from "../ClienteModal/ClienteModal";
-import Cliente from "../../types/Cliente";
 
 const TablaClientes = () => {
     const [clientes, setClientes] = useState<Cliente[]>([]);

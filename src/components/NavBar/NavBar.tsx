@@ -42,6 +42,9 @@ function NavBar() {
                         />
                         <Button style={{ backgroundColor: '#000000', borderColor: '#000000' }}>Search</Button>
                     </Form>
+                    <Nav className="me-auto">
+                        <Nav.Link onClick={() => navigate('/login')}>Login</Nav.Link>
+                    </Nav>
                 </Navbar.Collapse>
             </Container>
         </Navbar>
