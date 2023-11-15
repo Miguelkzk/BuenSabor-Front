@@ -5,7 +5,7 @@ import ServicioArticulo from "../../services/ServicioArticulo";
 import DeleteButton from "../DeleteButton/DeleteButton";
 import EditButton from "../EditButton/EditButton";
 import Loader from "../loader/Loader";
-import ArticuloModal from "../ProductModal/ArticuloModal";
+import ArticuloModal from "../ArticuloModal/ArticuloModal";
 import { CategoriaArticulo } from "../../types/CategoriaArticulo";
 import { UnidadMedida } from "../../types/UnidadMedida";
 import ServicioCategoria from "../../services/ServicioCategoria";

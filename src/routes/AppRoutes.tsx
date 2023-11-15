@@ -4,6 +4,7 @@ import Register from "../pages/Register";
 import Articulos from "../pages/Articulos";
 import Clientes from "../pages/Clientes";
 import Login from "../pages/Login";
+import Productos from "../pages/Productos";
 //import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
 
 const AppRoutes: React.FC = () => {
@@ -15,6 +16,7 @@ const AppRoutes: React.FC = () => {
             <Route path="/articulos" element={<Articulos />} />
             <Route path="/clientes" element={<Clientes />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/Productos" element={<Productos />} />
         </Routes>
     )
 }
