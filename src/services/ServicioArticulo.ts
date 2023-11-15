@@ -1,19 +1,21 @@
-import Articulo from "../types/Articulo";
+//import Articulo from "../types/Articulo";
+import { ArticuloDTO } from "../types/ArticuloDTO";
+
 
 const BASE_URL = "http://localhost:8088";
 
 const ServicioArticulo = {
-    getArticulos: async (): Promise<Articulo[]> => {
+    getArticulos: async (): Promise<ArticuloDTO[]> => {
         const response = await fetch(`${BASE_URL}/api/articulos`);
         const data = await response.json();
         return data;
     },
-    getArticulo: async (id: number): Promise<Articulo> => {
+    getArticulo: async (id: number): Promise<ArticuloDTO> => {
         const response = await fetch(`${BASE_URL}/api/articulos/${id}`);
         const data = await response.json();
         return data;
     },
-    createArticulo: async (articulo: Articulo): Promise<Articulo> => {
+    createArticulo: async (articulo: ArticuloDTO): Promise<ArticuloDTO> => {
         const response = await fetch(`${BASE_URL}/api/articulos`, {
             method: "POST",
             headers: { 'Content-Type': 'application/json' },
@@ -22,7 +24,7 @@ const ServicioArticulo = {
         const data = await response.json();
         return data;
     },
-    updateArticulo: async (id: number, articulo: Articulo): Promise<Articulo> => {
+    updateArticulo: async (id: number, articulo: ArticuloDTO): Promise<ArticuloDTO> => {
         const response = await fetch(`${BASE_URL}/api/articulos/${id}`, {
             method: "PUT",
             headers: { 'Content-Type': 'application/json' },
