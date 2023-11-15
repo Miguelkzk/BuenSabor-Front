@@ -28,16 +28,7 @@ function NavBar() {
                         style={{ maxHeight: '100px' }}
                         navbarScroll
                     >
-                        <NavDropdown title="Categorias" id="navbarScrollingDropdown">
-                            <NavDropdown.Item href="#action3">Hamburguesas</NavDropdown.Item>
-                            <NavDropdown.Item href="#action4">
-                                Pizzas
-                            </NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action5">
-                                Bebidas
-                            </NavDropdown.Item>
-                        </NavDropdown>
+
                         {(role === "ADMIN" || role === "EMPLEADO") &&
                             <Nav.Link onClick={() => navigate('/articulos')}>Artículos</Nav.Link>}
                         {(role === "ADMIN") &&
