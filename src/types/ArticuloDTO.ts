@@ -1,13 +1,16 @@
+import { CategoriaArticulo } from "./CategoriaArticulo";
+import { UnidadMedida } from "./UnidadMedida";
 
-export interface Articulo {
+
+export interface ArticuloDTO {
     id: number;
     denominacion: string;
     urlImagen: string;
     precioCompra: number;
     stockActual: number;
     stockMinimo: number;
-    unidadMedida: string;
-    categoriaArticulo: string;
+    unidadMedida: UnidadMedida;
+    categoriaArticulo: CategoriaArticulo;
     fechaAlta: Date;
     fechaModificacion: Date;
     fechaBaja: Date;
