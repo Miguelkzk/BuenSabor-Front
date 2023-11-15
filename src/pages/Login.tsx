@@ -23,6 +23,7 @@ const Login: React.FC = () => {
     const [error, setError] = useState<string | null>(null);
     const navigate = useNavigate();
 
+
     const formik = useFormik({
         initialValues: { username: '', password: '' },
         validationSchema: validationSchema,
@@ -45,37 +46,54 @@ const Login: React.FC = () => {
     }
 
     return (
-        <div className="d-flex justify-content-center align-items-center">
-            <Form onSubmit={formik.handleSubmit}>
-                <Form.Group controlId="formUsername">
+        <>
+        <div className="d-flex justify-content-center align-items-center flex-column mt-5" style={{gap: '7rem'}}>
+            <div className='d-flex flex-column align-items-center w-50 ' style={{gap: '7rem'}}>
+            <div className='d-flex flex-column align-items-center gap-md-5'>
+            <h1>El Buen Sabor</h1>
+            <h4>Iniciar Sesión</h4>
+            </div>
+            <div className='d-flex flex-column align-items-center w-100' style={{gap: '7rem'}}>
+            <Form className='d-flex' onSubmit={formik.handleSubmit} style={{display:'flex', flexDirection:'column', gap:'1rem'}}>
+                <Form.Group controlId="formUsername" style={{width: '25vw'}}>
                     <Form.Control
                         name='username'
                         type='text'
                         value={formik.values.username || ''}
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
+                        placeholder='E-mail'
                         isInvalid={Boolean(formik.errors.username && formik.touched.username)}
                     />
                     <Form.Control.Feedback type="invalid">
                         {formik.errors.username}
                     </Form.Control.Feedback>
                 </Form.Group>
-                <Form.Group controlId="formPassword">
+                <Form.Group controlId="formPassword"  style={{width: '25vw'}}>
                     <Form.Control
                         name="password"
                         type="password"
                         value={formik.values.password}
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
+                        placeholder='Contraseña'
                         isInvalid={Boolean(formik.errors.password && formik.touched.password)}
                     />
                     <Form.Control.Feedback type="invalid">
                         {formik.errors.password}
                     </Form.Control.Feedback>
                 </Form.Group>
-                <Button type="submit">Iniciar sesión</Button>
+                <Button type="submit" style={{width: '25vw'}}>Iniciar sesión</Button>
+                <Button variant="danger" type="submit" style={{width: '25vw'}} onClick={() => navigate('/')}>Cancelar</Button>
             </Form>
+            
+            <div className='gap-2 d-flex align-items-baseline'>
+            <p>¿No tienes una cuenta?</p> <Button variant="link" onClick={() => navigate('/register')}>Registrarse</Button>
+            </div>
+            </div>
+            </div>
         </div>
+        </>
     );
 };
 

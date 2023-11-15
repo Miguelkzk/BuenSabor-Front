@@ -11,6 +11,8 @@ function NavBar() {
     const navigate = useNavigate();
     const isLoggedIn = useIsLoggedIn();
     const role = userRole();
+
+
     function onLogOut() {
         window.localStorage.removeItem('isLoggedIn');
         window.localStorage.removeItem('token');
