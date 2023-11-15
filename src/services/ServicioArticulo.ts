@@ -6,7 +6,7 @@ const BASE_URL = "http://localhost:8088";
 
 const ServicioArticulo = {
     getArticulos: async (): Promise<ArticuloDTO[]> => {
-        const response = await fetch(`${BASE_URL}/api/articulos`);
+        const response = await fetch(`${BASE_URL}/api/articulos/all`);
         const data = await response.json();
         return data;
     },
