@@ -43,6 +43,9 @@ function NavBar() {
                         {(role === "ADMIN") &&
                             <Nav.Link onClick={() => navigate('/clientes')}>Clientes</Nav.Link>
                         }
+                        {(role === "ADMIN") &&
+                            <Nav.Link onClick={() => navigate('/productos')}>Productos</Nav.Link>
+                        }
                     </Nav>
                     {!isLoggedIn && <Nav.Link onClick={() => navigate('/login')}>Login</Nav.Link>}
 

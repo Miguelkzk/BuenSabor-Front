@@ -51,7 +51,7 @@ const ClienteModal = ({ show, onHide, title, modalType, cli, refreshData }: Clie
             apellido: Yup.string().required('Por favor ingrese el apellido'),
             telefono: Yup.string().required('Por favor ingrese un telefono'),
             email: Yup.string().required('Por favor ingrese el email'),
-            usuario: Yup.string().required('Por favor ingrese el usuario'),
+
         });
     };
     const formik = useFormik({

@@ -1,10 +1,14 @@
+import userRole from "../hooks/userRole";
+import userToken from "../hooks/userToken";
 import { Producto } from "../types/Producto";
 const BASE_URL = 'http://localhost:8088'
+
+const token = userToken();
 export const ProductoService = {
 
     //get all
     getProductos: async (): Promise<Producto[]> => {
-        const response = await fetch(`${BASE_URL}/api/productos/all`);
+        const response = await fetch(`${BASE_URL}/api/productos/all`)
         const data = await response.json();
         return data;
 
@@ -25,7 +29,7 @@ export const ProductoService = {
     createProducto: async (producto: Producto): Promise<Producto> => {
         const response = await fetch(`${BASE_URL}/api/productos/create`, {
             method: "POST",
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
             body: JSON.stringify(producto)
         });
         const data = await response.json();
@@ -35,7 +39,7 @@ export const ProductoService = {
     updateProducto: async (id: number, producto: Producto): Promise<Producto> => {
         const response = await fetch(`${BASE_URL}/api/productos/${id}`, {
             method: "PUT",
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
             body: JSON.stringify(producto)
         });
         const data = await response.json();

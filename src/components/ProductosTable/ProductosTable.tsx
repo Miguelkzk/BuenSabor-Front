@@ -8,6 +8,7 @@ import DeleteButton from "../DeleteButton/DeleteButton";
 import { Producto } from "../../types/Producto";
 import { ProductoService } from "../../services/ProductService";
 import ProductoModal from "../ProductoModal/ProductoModal";
+import NavBar from "../NavBar/NavBar";
 
 const ProductosTable = () => {
     const [productos, setProductos] = useState<Producto[]>([]);
@@ -48,8 +49,9 @@ const ProductosTable = () => {
     };
     return (
         <>
+            <NavBar />
             <Button variant="dark" style={{ float: 'right', margin: "1rem" }} onClick={() => handleClick("Nuevo producto", initializeNewProducto(), ModalType.CREATE)}>
-                Añadir cliente
+                Añadir Producto
             </Button>
             {isLoading ? <Loader /> : (
                 <Table hover>
