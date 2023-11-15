@@ -15,7 +15,8 @@ const AppRoutes: React.FC = () => {
         <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/articulos" element={<PrivateRoute element={<Articulos />} />} />
+            {/*<Route path="/articulos" element={<PrivateRoute element={<Articulos />} />} /> */}
+            <Route path="/articulos" element={<Articulos />} />
             <Route path="/clientes" element={<PrivateRoute element={<Clientes />} />} />
             <Route path="/login" element={<Login />} />
             <Route path="/Productos" element={<Productos />} />
