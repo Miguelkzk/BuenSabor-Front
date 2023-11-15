@@ -85,7 +85,7 @@ const Register: React.FC = () => {
       <Row className="mb-3">
         <Form.Group as={Col} controlId="formGridCity">
           <Form.Label>Teléfono</Form.Label>
-          <Form.Control type="number" placeholder="Teléfono" value={telefono} onChange={(e) => setTelefono(e.target.value)}/>
+          <Form.Control className='overflow-hidden' type="number" placeholder="Teléfono" value={telefono} onChange={(e) => setTelefono(e.target.value)}/>
         </Form.Group>
 
         <Form.Group as={Col} controlId="formGridCity">
