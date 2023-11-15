@@ -13,10 +13,10 @@ const VerProducto: React.FC<PropsProducto> = ({ prod, onBack }) => {
     }
 
     return (<>
-        <div className="conteiner d-flex justify-content-center align-items-center" style={{ marginTop: '3rem', textAlign: 'center' }}>
+        <div className="container d-flex justify-content-center align-items-center" style={{ marginTop: '3rem', textAlign: 'center' }}>
             <div>
                 <h2>{prod.denominacion}</h2>
-                <div className="conteiner d-flex justify-content-center align-items-center">
+                <div className="container d-flex justify-content-center align-items-center">
                     <img src={prod.urlImagen} />
                 </div>
                 <p>{prod.descripcion}</p>

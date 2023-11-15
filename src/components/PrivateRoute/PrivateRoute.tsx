@@ -1,20 +1,22 @@
 import { Navigate } from "react-router-dom";
 import useIsLoggedIn from "../../hooks/useIsLoggedIn";
+import userRole from "../../hooks/userRole";
 
 type PrivateRouteProps = {
-    element: React.ReactNode;
+  element: React.ReactNode;
 };
 
 const PrivateRoute: React.FC<PrivateRouteProps> = ({ element }) => {
-    //Utils
-    const isLoggedIn = useIsLoggedIn();
+  //Utils
+  const isLoggedIn = useIsLoggedIn();
+  const role = userRole();
 
-    //Render
-    if (isLoggedIn){
-        return element;
-    }
+  //Render
+  if (isLoggedIn && role === "ADMIN") {
+    return element;
+  }
 
-    return <Navigate to="/login" />;
+  return <Navigate to="/login" />;
 };
 
 export default PrivateRoute;

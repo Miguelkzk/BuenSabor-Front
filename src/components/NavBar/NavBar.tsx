@@ -5,8 +5,16 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { useNavigate } from 'react-router-dom';
+import useIsLoggedIn from '../../hooks/useIsLoggedIn';
 function NavBar() {
     const navigate = useNavigate();
+    const isLoggedIn = useIsLoggedIn();
+    function onLogOut() {
+        window.localStorage.removeItem('isLoggedIn');
+        window.localStorage.removeItem('token');
+        window.localStorage.removeItem('role');
+        navigate('/');
+    }
     return (
         <Navbar expand="lg" style={{ backgroundColor: '#F9ED32' }} >
             <Container fluid>
@@ -34,7 +42,7 @@ function NavBar() {
                     <Nav className="me-auto">
                         <Nav.Link onClick={() => navigate('/login')}>Login</Nav.Link>
                     </Nav>
-                    <Nav.Link>Log Out</Nav.Link>
+                    {isLoggedIn && <Nav.Link onClick={onLogOut}>Log Out</Nav.Link>}
                 </Navbar.Collapse>
             </Container>
         </Navbar>
