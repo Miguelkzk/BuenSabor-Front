@@ -6,6 +6,8 @@ import Clientes from "../pages/Clientes";
 import Login from "../pages/Login";
 import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
 import Productos from "../pages/Productos";
+import Categorias from "../pages/Categorias";
+import UnidadMedida from "../pages/UnidadMedida";
 
 
 const AppRoutes: React.FC = () => {
@@ -17,6 +19,8 @@ const AppRoutes: React.FC = () => {
             <Route path="/clientes" element={<PrivateRoute element={<Clientes />} />} />
             <Route path="/login" element={<Login />} />
             <Route path="/Productos" element={<Productos />} />
+            <Route path="/categorias-insumos" element={<Categorias />} />
+            <Route path="/unidades-medida" element={<UnidadMedida />} />
         </Routes>
     )
 }
