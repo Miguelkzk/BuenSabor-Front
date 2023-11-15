@@ -1,18 +1,12 @@
 //import Articulo from "../types/Articulo";
-import userToken from "../hooks/userToken";
 import { ArticuloDTO } from "../types/ArticuloDTO";
-const token = userToken();
+
 
 const BASE_URL = "http://localhost:8088";
 
 const ServicioArticulo = {
     getArticulos: async (): Promise<ArticuloDTO[]> => {
-        const response = await fetch(`${BASE_URL}/api/articulos/all`, {
-            headers: {
-                'Authorization': `Bearer ${token}`,
-                'Content-Type': 'application/json',
-            }
-        });
+        const response = await fetch(`${BASE_URL}/api/articulos`);
         const data = await response.json();
         return data;
     },

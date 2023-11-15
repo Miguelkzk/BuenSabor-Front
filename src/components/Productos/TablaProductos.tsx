@@ -31,7 +31,7 @@ function TablaProductos() {
 
 
     const [productos, setProductos] = useState<Producto[]>([]);
-    const [productosFiltrados, setProductosFiltrados] = useState<Producto[]>(productos);
+    const [productosFiltrados, setProductosFiltrados] = useState<Producto[]>([]);
     const [filtro, setFiltro] = useState<string>("");
 
 
@@ -41,7 +41,6 @@ function TablaProductos() {
             const productos = await
                 ProductoService.getProductos();
             setProductos(productos);
-            setProductosFiltrados(productos);
 
         }
         fetchProductos();
@@ -50,14 +49,9 @@ function TablaProductos() {
 
     //filtrar productos
     const handleSearch = async (filtro: string) => {
-        if (filtro.trim() == "") {
-            setProductosFiltrados(productos);
-
-        } else {
-            const productos = await ProductoService.searchProducto(filtro);
-            setProductosFiltrados(productos);
-
-        }
+        const productos = await ProductoService.searchProducto(filtro);
+        setProductosFiltrados(productos);
+        console.log(productos);
     }
 
     const [selectedProduct, setSelectedProduct] = useState<number | null>(null); //estado para guardar el id del producto
@@ -127,13 +121,8 @@ function TablaProductos() {
                     ))
                 ) : (
                     <>
-                        <h4 style={{ color: 'red' }} >No se han encontrado productos que coincidan con "{filtro}" </h4>
-                        <Button variant="secondary" onClick={() => {
-                            setFiltro("");
-                            setProductosFiltrados(productos);
-                        }}>
-                            Limpiar Filtros
-                        </Button>
+                        <h4 style={{ color: 'red' }} >No se han encontrado productos que coincidan con "{filtro}"
+                        </h4>
                     </>
 
                 )}

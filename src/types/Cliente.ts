@@ -4,8 +4,9 @@ export interface Cliente {
     apellido: string;
     telefono: string;
     email: string;
+    usuario: string;
     fechaAlta: Date;
     fechaModificacion: Date;
-    fechaBaja: Date
+    fechaBaja: Date 
 }
 export default Cliente;

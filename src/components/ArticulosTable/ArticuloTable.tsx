@@ -21,8 +21,8 @@ import { ArticuloDTO } from "../../types/ArticuloDTO";
         const [refreshData, setRefreshData] = useState(false);
         const [articulosResponse, setArticulosResponse] = useState<ArticuloDTO[]>([])
         const fetchArticulos = async () => {
-            await ServicioCategoria.getCategorias().then(value => setCategorias(value))
-                .then(_ => ServicioUnidadMedida.getUnidadMedida().then(value => setUnidades(value)))
+            await ServicioCategoria.getCategoriasInsumo().then(value => setCategorias(value))
+                .then(_ => ServicioUnidadMedida.getUnidadesMedida().then(value => setUnidades(value)))
                 .then(_ => ServicioArticulo.getArticulos()
                     .then(value => {
                         updateArticulos(value)

@@ -29,6 +29,7 @@ const TablaClientes = () => {
             apellido: "",
             telefono: "",
             email: "",
+            usuario: "",
             fechaAlta: new Date(),
             fechaModificacion: new Date(),
             fechaBaja: new Date()
@@ -46,6 +47,9 @@ const TablaClientes = () => {
     };
     return (
         <>
+            <Button variant="dark" style={{ float: 'right', margin: "1rem" }} onClick={() => handleClick("Nuevo cliente", initializeNewClient(), ModalType.CREATE)}>
+                Añadir cliente
+            </Button>
             {isLoading ? <Loader /> : (
                 <Table hover>
                     <thead>
