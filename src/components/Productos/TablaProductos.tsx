@@ -41,6 +41,7 @@ function TablaProductos() {
             const productos = await
                 ProductoService.getProductos();
             setProductos(productos);
+            console.log(productos);
             setProductosFiltrados(productos);
 
         }
